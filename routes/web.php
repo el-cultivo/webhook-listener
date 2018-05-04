@@ -14,3 +14,5 @@
 Route::resource('/','WebhookController',
     ['only' => ['index','store'],
 ]);
+
+Route::get("today",'WebhookController@today');

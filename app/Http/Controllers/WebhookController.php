@@ -19,6 +19,16 @@ class WebhookController extends Controller
     }
 
     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function today()
+    {
+        return Event::where("created_at",">=", date("Y-m-d") )->get();
+    }
+
+    /**
      * Verify with Stripe that the event is genuine.
      *
      * @param string $id
